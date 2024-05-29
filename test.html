@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кликер</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #counter {
+            font-size: 2em;
+            margin: 20px;
+        }
+        #clickButton {
+            font-size: 1.5em;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        #link {
+            display: block;
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="counter">0</div>
+    <button id="clickButton">Кликни меня!</button>
+    <a id="link" href="https://example.com" target="_blank">Перейти по ссылке</a>
+
+    <script>
+        // Инициализируем счетчик кликов
+        let count = 0;
+
+        // Получаем элементы из HTML
+        const counterElement = document.getElementById('counter');
+        const clickButton = document.getElementById('clickButton');
+        const linkElement = document.getElementById('link');
+
+        // Функция увеличения счетчика и обновления ссылки
+        clickButton.addEventListener('click', () => {
+            count++;
+            counterElement.textContent = count;
+            linkElement.href = `https://example.com?count=${count}`;
+        });
+    </script>
+</body>
+</html>
